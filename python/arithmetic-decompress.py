@@ -12,7 +12,7 @@
 
 import sys
 import arithmeticcoding
-
+import os
 
 # Command line main application function.
 def main(args):
@@ -21,6 +21,7 @@ def main(args):
 		sys.exit("Usage: python arithmetic-decompress.py InputFile OutputFile")
 	inputfile, outputfile = args
 	
+	os.makedirs(os.path.dirname(outputfile), exist_ok=True)
 	# Perform file decompression
 	with open(outputfile, "wb") as out, open(inputfile, "rb") as inp:
 		bitin = arithmeticcoding.BitInputStream(inp)

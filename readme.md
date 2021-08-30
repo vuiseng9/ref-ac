@@ -10,6 +10,17 @@ and does not target the best speed/memory/performance.
 
 Home page with detailed description: [https://www.nayuki.io/page/reference-arithmetic-coding](https://www.nayuki.io/page/reference-arithmetic-coding)
 
+## Quick Sample for Python Implementation
+```
+python arithmetic-compress.py sample_txt/baby-shark-lyrics.txt output/baby-shark-lyrics.ac.txt
+python arithmetic-decompress.py output/baby-shark-lyrics.ac.txt output/baby-shark-lyrics.de-ac.txt
+
+python adaptive-arithmetic-compress.py sample_txt/baby-shark-lyrics.txt output/baby-shark-lyrics.aac.txt
+python adaptive-arithmetic-decompress.py output/baby-shark-lyrics.aac.txt output/baby-shark-lyrics.de-aac.txt
+
+python ppm-compress.py sample_txt/baby-shark-lyrics.txt output/baby-shark-lyrics.ppm.txt
+python ppm-decompress.py output/baby-shark-lyrics.ppm.txt output/baby-shark-lyrics.de-ppm.txt 
+```
 
 License
 -------

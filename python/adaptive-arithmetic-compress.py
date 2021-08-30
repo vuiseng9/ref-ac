@@ -16,7 +16,7 @@
 
 import contextlib, sys
 import arithmeticcoding
-
+import os
 
 # Command line main application function.
 def main(args):
@@ -25,6 +25,7 @@ def main(args):
 		sys.exit("Usage: python adaptive-arithmetic-compress.py InputFile OutputFile")
 	inputfile, outputfile = args
 	
+	os.makedirs(os.path.dirname(outputfile), exist_ok=True)
 	# Perform file compression
 	with open(inputfile, "rb") as inp, \
 			contextlib.closing(arithmeticcoding.BitOutputStream(open(outputfile, "wb"))) as bitout:

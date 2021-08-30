@@ -12,7 +12,7 @@
 
 import sys
 import arithmeticcoding, ppmmodel
-
+import os
 
 # Must be at least -1 and match ppm-compress.py. Warning: Exponential memory usage at O(257^n).
 MODEL_ORDER = 3
@@ -26,6 +26,7 @@ def main(args):
 	inputfile  = args[0]
 	outputfile = args[1]
 	
+	os.makedirs(os.path.dirname(outputfile), exist_ok=True)
 	# Perform file decompression
 	with open(inputfile, "rb") as inp, open(outputfile, "wb") as out:
 		bitin = arithmeticcoding.BitInputStream(inp)

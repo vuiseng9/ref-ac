@@ -15,6 +15,7 @@
 
 import contextlib, sys
 import arithmeticcoding
+import os
 
 
 # Command line main application function.
@@ -28,6 +29,7 @@ def main(args):
 	freqs = get_frequencies(inputfile)
 	freqs.increment(256)  # EOF symbol gets a frequency of 1
 	
+	os.makedirs(os.path.dirname(outputfile), exist_ok=True)
 	# Read input file again, compress with arithmetic coding, and write output file
 	with open(inputfile, "rb") as inp, \
 			contextlib.closing(arithmeticcoding.BitOutputStream(open(outputfile, "wb"))) as bitout:
